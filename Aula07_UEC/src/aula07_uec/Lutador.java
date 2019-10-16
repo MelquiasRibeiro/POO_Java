@@ -22,7 +22,8 @@ public class Lutador implements Controlador {
         this.vitorias = vitorias;
         this.derrotas = derrotas;
         this.empates = empates;
-        
+        System.out.println("lutador cadastrado com sucesso");
+
         
     }    
     public String getNome() {

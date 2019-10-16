@@ -10,11 +10,14 @@ public class Aula05_Banco {
         
         C1.sacar(200);
         C2.sacar(200);
-        C1.sacar(300);
-        C1.saldoConta();
-        C2.saldoConta();
-        C1.fecharConta(); 
-        C1.sacar(100);
+        
+        
+   Transferencia T1= new Transferencia();  
+   T1.transferir(C1,C2,200f);
+   
+   C1.extrato();
+   C2.extrato();
+
     }
     
 }

@@ -2,7 +2,7 @@
 package aula05_banco;
 public class Conta {
     private String titular;
-    private float saldo;
+    protected  float saldo;
     private boolean status;
     private int numConta;
     private String tipoConta;
@@ -43,7 +43,9 @@ public class Conta {
     public String getTipoConta() {
         return tipoConta;
     }
-    
+    public void extrato(){
+        System.out.println("seu saldo é: "+ this.getSaldo());
+    }
     public void deposito(float valor){
       if(this.getStatus()== true){
         this.setSaldo(getSaldo() + valor);
@@ -93,10 +95,9 @@ public class Conta {
         }
         else{
             this.setStatus(false);
-            System.out.println(getTitular() + ", sua conta foi encerrada com sucesso");   
+            System.out.println(getTitular() + ", sua conta foi encerrada com sucesso");  
+        
         }
     }
-    public void Transferir(int numContaOrigem ,int numContaDestino){
-        
-    }
+    
 }
