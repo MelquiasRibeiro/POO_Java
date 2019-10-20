@@ -102,8 +102,7 @@ public class Tela extends javax.swing.JFrame {
     public float getResultado() {
         return resultado;
     }
- 
-    
+   
     public float alturaToFlot(){
       float alturar = Float.parseFloat(Altura.getText());
       
@@ -116,8 +115,12 @@ public class Tela extends javax.swing.JFrame {
      return pesor; 
     }
     
-    public void IMC(){       
-        setResultado( getPeso() / getAltura()*getAltura());    
+    public void IMC(){      
+       setPeso();
+       setAltura();
+       System.out.println(getPeso());
+       setResultado( getPeso() / getAltura()*getAltura());    
+        
     }
        
     
@@ -128,10 +131,7 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_PesoActionPerformed
 
     private void CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularActionPerformed
-
-        
-        System.out.println("  "+ resultado );
-
+        IMC() ;     
         JOptionPane.showMessageDialog(null,"seu imc é: " + resultado ); 
     }//GEN-LAST:event_CalcularActionPerformed
 
