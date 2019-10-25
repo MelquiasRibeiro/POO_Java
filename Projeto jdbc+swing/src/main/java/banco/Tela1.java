@@ -9,7 +9,7 @@ public class Tela1 extends JFrame {
 
 	public Tela1(String title) {
 		super(title);
-		setLayout(new FloatLayout());
+		setLayout(new FlowLayout());
 
 		JPanel jpnTitular = new JPanel();
 		add(jpnTitular);
@@ -37,24 +37,29 @@ public class Tela1 extends JFrame {
 
 		JButton btnConfirm = new JButton("Salvar");
 		jpnButtons.add(btnConfirm);
+		
 		JButton btnClean = new JButton("Limpar");
 		jpnButtons.add(btnClean);
 
 		btnConfirm.addActionListener((event) -> {
 			ContaDAO dao = new ContaDAO("root", "melquais10");
-			Conta conta = new Conta (titular.getText(), numConta.getText(), tipoConta.getText());
+			Conta conta = new Conta (titular.getText(), Integer.parseInt(numConta.getText()), tipoConta.getText());
+			
 			try {
 				dao.openConnection();
-				dao.create(Conta);
+				dao.create(conta);
 				dao.closeConnection();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			
 		}
+		
 		btnClean.addActionListener((event) -> {
 			titular.setText("");
 			numConta.setText("");
 			tipoConta.setText("");
 		}
+		
 	}
-}
+}  

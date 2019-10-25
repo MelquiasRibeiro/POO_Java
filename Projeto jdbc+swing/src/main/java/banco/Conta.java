@@ -52,33 +52,7 @@ public class Conta {
     public String getTipoConta() {
         return tipoConta;
     }
-    public void extrato(){
-        System.out.println("seu saldo é: "+ this.getSaldo());
-    }
-    public void deposito(float valor){
-      if(this.getStatus()== true){
-        this.setSaldo(getSaldo() + valor);
-       }
-      else{
-          System.out.println(" você não pode Depositar, sua conta esta encerrada");   
-      }
-    }
-    public void sacar(float valor){
-      if(this.getStatus()== true){    
-            if(this.getSaldo()>= valor){ 
-                this.setSaldo(getSaldo() - valor);
-            }
-            else{
-                        
-                     System.out.println(" você não pode sacar, seu saldo é insuficiente");   
-      }
-                       
-       
-      }       
-      else{
-          System.out.println(" você não pode sacar, sua conta esta encerrada");   
-      }
-    }
+
             
     public String getTitular() {
         return titular;
@@ -95,16 +69,46 @@ public class Conta {
     public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
+    
+    
+    public void extrato(){
+    	JOptionPane.showMessageDialog(null,"seu saldo é: "+ this.getSaldo());
+    }
+    public void deposito(float valor){
+      if(this.getStatus()== true){
+        this.setSaldo(getSaldo() + valor);
+       }
+      else{
+    	  
+    	  JOptionPane.showMessageDialog(null," você não pode Depositar, sua conta esta encerrada"); 
+      }
+    }
+    public void sacar(float valor){
+      if(this.getStatus()== true){    
+            if(this.getSaldo()>= valor){ 
+                this.setSaldo(getSaldo() - valor);
+            }
+            else{
+                        
+            	 JOptionPane.showMessageDialog(null," você não pode sacar, seu saldo é insuficiente");   
+      }
+                       
+       
+      }       
+      else{
+    	  JOptionPane.showMessageDialog(null," você não pode sacar, sua conta esta encerrada");   
+      }
+    }
     public void saldoConta(){
-        System.out.println("o saldo de " + this.getTitular() + " agora é:R$ " + this.getSaldo() );
+    	 JOptionPane.showMessageDialog(null,"o saldo de " + this.getTitular() + " agora é:R$ " + this.getSaldo() );
     }
     public void fecharConta(){
         if (this.getSaldo()!= 0 ){
-            System.out.println(" você não pode fechar sua conta pos possui pendendcias ou ainda tem saldo restante");   
+        	 JOptionPane.showMessageDialog(null," você não pode fechar sua conta pos possui pendendcias ou ainda tem saldo restante");   
         }
         else{
             this.setStatus(false);
-            System.out.println(getTitular() + ", sua conta foi encerrada com sucesso");  
+            JOptionPane.showMessageDialog(null,getTitular() + ", sua conta foi encerrada com sucesso");  
         
         }
     }
