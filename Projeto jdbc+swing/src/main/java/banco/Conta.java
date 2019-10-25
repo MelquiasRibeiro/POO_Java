@@ -16,12 +16,12 @@ public class Conta {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Conta(String titular,float saldo, boolean status,int numConta,String tipoConta){
-        this.setStatus(status);
+	public Conta(String titular, int numConta,String tipoConta){
+        this.setStatus(true);
         this.setTitular(titular);
-        this.setSaldo(saldo);
+        this.setSaldo(100);
         this.setNumConta(numConta);
-        this.setTipoConta(tipoConta);
+        this.setTipoConta("cc");
         System.out.println("informações sobre a conta " + getNumConta()+": " );
         System.out.println("o saldo inicial de " + this.getTitular() + " é: R$ " + this.getSaldo() );
         System.out.println(" a conta de " + this.getTitular() + " esta " + this.getStatus()+" e seu tipo de conta é " +this.getTipoConta() );
