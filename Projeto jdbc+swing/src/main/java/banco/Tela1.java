@@ -53,13 +53,13 @@ public class Tela1 extends JFrame {
 				e.printStackTrace();
 			}
 			
-		}
+		});
 		
 		btnClean.addActionListener((event) -> {
 			titular.setText("");
 			numConta.setText("");
 			tipoConta.setText("");
-		}
+		});
 		
 	}
 }  
